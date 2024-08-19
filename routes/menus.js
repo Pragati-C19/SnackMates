@@ -9,8 +9,9 @@ router.get("/all", getMenus);
 //get specific menu http://localhost:4000/menus/{menu_id}
 router.get("/:menu_id", getMenu);
 
-//todo : Get Single Menu Type - Fetches details of a specific menu type. will need this after search tab
-//get specific menu http://localhost:4000/menus/{menu_type}
+//FIXME: Get Single Menu Type - Fetches details of a specific menu type. will need this after search tab
+
+//get specific menu by type http://localhost:4000/menus/{menu_type}
 router.get("/:menu_type", getMenuByType);
 
 //Export all menu routers from here
