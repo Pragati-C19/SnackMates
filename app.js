@@ -15,6 +15,9 @@ const menuRouter = require("./routes/menus");
 //import all restaurants routers here
 const restaurantsRouter = require("./routes/restaurants");
 
+//import all favorites routers here
+const favoritesRouter = require("./routes/favorites");
+
 //routers for http://localhost:4000/auth
 app.use("/auth", userRouter);
 
@@ -23,6 +26,9 @@ app.use("/menus", menuRouter);
 
 //routers for http://localhost:4000/restaurants
 app.use("/restaurants", restaurantsRouter);
+
+//routers for http://localhost:4000/favorites
+app.use("/favorites", favoritesRouter);
 
 app.listen(port, () => {
   console.log(`Event-Checker app listening on port ${port}`);
