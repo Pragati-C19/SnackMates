@@ -11,4 +11,8 @@ const getMenus = (req,res) =>{
 
 }
 
-module.exports = {getMenu,getMenus}
+const getMenuByType = (req,res) =>{
+
+}
+
+module.exports = {getMenu,getMenus, getMenuByType}
