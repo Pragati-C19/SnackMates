@@ -12,5 +12,5 @@ router.post("/login", loginUser);
 //User Logout http://localhost:4000/auth/logout
 router.post("/logout", logoutUser);
 
-//Export all userrouters from here
+//Export all users routers from here
 module.exports = router;

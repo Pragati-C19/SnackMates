@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { getMenus, getMenu } = require("../controller/menus-controller");
+const { getMenu, getMenus } = require("../controller/menus-controller");
 
 //get all menus http://localhost:4000/menus/all
 router.get("/all", getMenus);
