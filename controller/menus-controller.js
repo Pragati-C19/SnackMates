@@ -38,7 +38,7 @@ const getMenus = (req, res) => {
   });
 };
 
-//todo: it's giving error menu not found
+
 const getMenuByType = (req, res) => {
   //Extract Type from request parameter
   const menuType = req.params.menu_type;
