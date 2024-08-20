@@ -41,7 +41,7 @@ const getMenus = (req, res) => {
 //todo: it's giving error menu not found
 const getMenuByType = (req, res) => {
   //Extract Type from request parameter
-  const {menuType} = req.params;
+  const { menuType } = req.params;
   console.log(`[DEBUG] Menu type received: ${menu_type}`);
 
   //sql query to find menu_type
@@ -54,7 +54,7 @@ const getMenuByType = (req, res) => {
       console.error("Error while Fetching Menu by Type:", error);
       res.status(500).json({ statusCode: 500, error: "Failed to Fetch Menu" });
     } else {
-        console.log("[DEBUG] Query results: ", results);
+      console.log("[DEBUG] Query results: ", results);
       if (results.length === 0) {
         res.status(404).json({ statusCode: 404, error: "Menusss not found" });
       } else {
