@@ -67,6 +67,29 @@ const addFavorites = (req, res) => {
   });
 };
 
-const deleteFavorite = (req, res) => {};
+const deleteFavorite = (req, res) => {
+  const userId = req.params.user_id;
+  const favoriteId = req.params.favorite_id;
+
+  const deleteFavoriteQuery = `
+    DELETE FROM favorite_table 
+    WHERE user_id = ? AND favorite_id = ?`;
+
+  db.query(deleteFavoriteQuery, [userId, favoriteId], (error, results) => {
+    if (error) {
+      console.error("Error while deleting favorite:", error);
+      res
+        .status(500)
+        .json({ statusCode: 500, error: "Failed to delete favorite" });
+    } else if (results.affectedRows === 0) {
+      res.status(404).json({ statusCode: 404, error: "Favorite not found" });
+    } else {
+      res
+        .status(200)
+        .json({ statusCode: 200, message: "Favorite deleted successfully" });
+      console.log("[INFO] Favorite deleted: ", results);
+    }
+  });
+};
 
 module.exports = { getFavorites, addFavorites, deleteFavorite };
