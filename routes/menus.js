@@ -12,7 +12,7 @@ router.get("/:menu_id", getMenu);
 //FIXME: Get Single Menu Type - Fetches details of a specific menu type. will need this after search tab
 
 //get specific menu by type http://localhost:4000/menus/{menu_type}
-router.get("/:menu_type", getMenuByType);
+router.get("/type/:menu_type", getMenuByType);
 
 //Export all menu routers from here
 module.exports = router;
