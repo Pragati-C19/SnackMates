@@ -4,9 +4,8 @@ const jwt = require("jsonwebtoken");
     Token is going to come from header(Authorization)
     authorization header format was "Bearer TOKEN"
     We can directly use token instead of adding Bearer
- */
+*/
 function authenticateToken(req, res, next) {
-  
   const authHeader = req.headers["authorization"];
   const token = authHeader;
 

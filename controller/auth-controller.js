@@ -65,12 +65,10 @@ const loginUser = (req, res) => {
           });
         } else {
           // Passwords do not match : Authentication failed
-          res
-            .status(401)
-            .json({
-              statusCode: 401,
-              error: "Wrong Password, Authentication Failed",
-            });
+          res.status(401).json({
+            statusCode: 401,
+            error: "Wrong Password, Authentication Failed",
+          });
         }
       }
     }

@@ -38,7 +38,6 @@ const getMenus = (req, res) => {
   });
 };
 
-
 const getMenuByType = (req, res) => {
   //Extract Type from request parameter
   const menuType = req.params.menu_type;
@@ -47,7 +46,12 @@ const getMenuByType = (req, res) => {
   //sql query to find menu_type
   const getMenuByTypeQuery = "SELECT * FROM menu_table WHERE menu_type = ?";
 
-  console.log("[INFO] Running Query: ", getMenuByTypeQuery, "with menuType:", menuType);
+  console.log(
+    "[INFO] Running Query: ",
+    getMenuByTypeQuery,
+    "with menuType:",
+    menuType
+  );
 
   db.query(getMenuByTypeQuery, [menuType], (error, results) => {
     if (error) {
