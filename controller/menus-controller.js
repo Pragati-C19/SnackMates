@@ -5,7 +5,7 @@ const db = require("../database/db-connection");
 
 const getMenu = (req, res) =>{
 //Extract ID from request parameter
-  const menuId = req.params.id;
+  const menuId = req.params.menu_id;
 
   //sql query to find menu_id
   const getMenuQuery = "SELECT * FROM menu_table WHERE menu_id = ?";
