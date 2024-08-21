@@ -1,7 +1,5 @@
 # SnackMates-Server
 
-## Description
-
 SnackMates-Server is a food ordering platform that provides a server-side API to manage restaurants, menus, user favorites, and authentication. This server-side application is built with Node.js and Express, and it interfaces with a MySQL database to handle various CRUD operations.
 
 ## Features
@@ -190,7 +188,7 @@ SnackMates-Server is a food ordering platform that provides a server-side API to
             {
                 "menu_id": "number"
             }
-                ```
+            ```
         - **Response**: Success or error message
 
         <br>  <!-- This adds a blank line -->
