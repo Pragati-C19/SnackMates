@@ -106,9 +106,8 @@ SnackMates-Server is a food ordering platform that provides a server-side API to
             }
             ```
         - **Response**: Success or error message
-
-        <br>  <!-- This adds a blank line -->
-        ![User Register](docs/API's/auth-api-sample/user-register.png)
+         
+         ![User Register](docs/API's/auth-api-sample/user-register.png)
 
     - **Login User**
 
