@@ -86,9 +86,9 @@ SnackMates-Server is a food ordering platform that provides a server-side API to
   - `menu_id` (INT,Foreign Key)
   - `created_at` (Timestamp)
 
-![ER Diagram1](docs/database_temp/ER-diagram1.png)
+    ![ER Diagram1](docs/database_temp/ER-diagram1.png)
 
-![ER Diagram2](docs/database_temp/ER-diagram2.png)
+    ![ER Diagram2](docs/database_temp/ER-diagram2.png)
 ## API Endpoints
 
 1. **Auth Routes**
@@ -107,7 +107,7 @@ SnackMates-Server is a food ordering platform that provides a server-side API to
             ```
         - **Response**: Success or error message
          
-         ![User Register](docs/API's/auth-api-sample/user-register.png)
+        ![User Register](docs/API's/auth-api-sample/user-register.png)
 
     - **Login User**
 
@@ -121,7 +121,6 @@ SnackMates-Server is a food ordering platform that provides a server-side API to
             ```
         - **Response**: JWT token and user details 
 
-        <br>  <!-- This adds a blank line -->
         ![User Login](docs/API's/auth-api-sample/user-login.png)
         
 2. **Menu Routes**
@@ -131,7 +130,6 @@ SnackMates-Server is a food ordering platform that provides a server-side API to
         - **GET** `/menus/all`
         - **Response**: List of all menus
 
-        <br>  <!-- This adds a blank line -->
         ![Get All Menus](docs/API's/menus-api-sample/get-all-menus.png)
 
 
@@ -140,7 +138,6 @@ SnackMates-Server is a food ordering platform that provides a server-side API to
         - **GET** `/menus/:menu_id`
         - **Response**: Menu details for the specified ID
 
-        <br>  <!-- This adds a blank line -->
         ![Get Menu by ID](docs/API's/menus-api-sample/get-menu.png)
 
     - **Get Menus by Type**
@@ -148,7 +145,6 @@ SnackMates-Server is a food ordering platform that provides a server-side API to
         - **GET** `/menus/:menu_type`
         - **Response**: List of menus filtered by the specified type
 
-        <br>  <!-- This adds a blank line -->
         ![Get Menus by Type](docs/API's/menus-api-sample/get-menu-by-type.png)
 
 3. **Restaurant Routes**
@@ -158,7 +154,6 @@ SnackMates-Server is a food ordering platform that provides a server-side API to
         - **GET** `/restaurants/all`
         - **Response**: List of all restaurants
 
-        <br>  <!-- This adds a blank line -->
         ![Get All Restaurants](docs/API's/restaurants-api-sample/get-all-restaurants.png)
 
     - **Get Restaurant Menu**
@@ -166,7 +161,6 @@ SnackMates-Server is a food ordering platform that provides a server-side API to
         - **GET** `/restaurants/menu/:restaurant_id`
         - **Response**: List of menus for the specified restaurant
 
-        <br>  <!-- This adds a blank line -->
         ![Get Restaurant Menus](docs/API's/restaurants-api-sample/get-menus-of-restaurant.png)
 
 4. **Favorites Routes**
@@ -176,7 +170,6 @@ SnackMates-Server is a food ordering platform that provides a server-side API to
         - **GET** `/favorites/all/:user_id`
         - **Response**: List of favorite items for the specified user
 
-        <br>  <!-- This adds a blank line -->
         ![Get User's Favorites](docs/API's/favorites-api-sample/get-all-favorites.png)
 
     - **Add to Favorites**
@@ -190,7 +183,6 @@ SnackMates-Server is a food ordering platform that provides a server-side API to
             ```
         - **Response**: Success or error message
 
-        <br>  <!-- This adds a blank line -->
         ![Add to Favorites](docs/API's/favorites-api-sample/add-to-favorites.png)
 
     - **Remove from Favorites**
@@ -198,7 +190,6 @@ SnackMates-Server is a food ordering platform that provides a server-side API to
         - **DELETE** `/favorites/:user_id/:favorite_id`
         - **Response**: Success or error message
 
-        <br>  <!-- This adds a blank line -->
         ![Remove from Favorites](docs/API's/favorites-api-sample/delete-favorites.png)
 
 ## Contributing
