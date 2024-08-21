@@ -1,10 +1,8 @@
-//All request and response for menu API wrote here
-
-//DB Connection
+// All request and response for menu API wrote here
+// DB Connection
 const db = require("../database/db-connection");
 
 /*
-
 This query retrieves the favorite items for a specific user along with their associated menu details.
 -- 1. SELECT favorite_table.*, menu_table.* 
 --    - Fetches all columns from both favorite_table and menu_table.
@@ -15,7 +13,6 @@ This query retrieves the favorite items for a specific user along with their ass
 --    - Ensures only rows with matching menu_id in both tables are returned.
 -- 4. WHERE favorite_table.user_id = ?
 --    - Filters the results to only include favorites for the specified user_id.
-
 */
 const getFavorites = (req, res) => {
   const userId = req.params.user_id;

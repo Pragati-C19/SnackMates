@@ -1,4 +1,4 @@
-/* don't expose password or any sensitive info*/
+/* don't expose password or any sensitive info */
 const config = {
   db: {
     host: "localhost",

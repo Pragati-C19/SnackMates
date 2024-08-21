@@ -1,13 +1,13 @@
-//All request and response for menu API wrote here
+// All request and response for menu API wrote here
 
-//DB Connection
+// DB Connection
 const db = require("../database/db-connection");
 
 const getMenu = (req, res) => {
-  //Extract ID from request parameter
+  // Extract ID from request parameter
   const menuId = req.params.menu_id;
 
-  //sql query to find menu_id
+  // sql query to find menu_id
   const getMenuQuery = "SELECT * FROM menu_table WHERE menu_id = ?";
 
   db.query(getMenuQuery, [menuId], (error, results) => {
@@ -39,11 +39,11 @@ const getMenus = (req, res) => {
 };
 
 const getMenuByType = (req, res) => {
-  //Extract Type from request parameter
+  // Extract Type from request parameter
   const menuType = req.params.menu_type;
   console.log(`[DEBUG] Menu type received: ${menuType}`);
 
-  //sql query to find menu_type
+  // sql query to find menu_type
   const getMenuByTypeQuery = "SELECT * FROM menu_table WHERE menu_type = ?";
 
   console.log(

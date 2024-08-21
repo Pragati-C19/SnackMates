@@ -7,14 +7,14 @@ const {
   getMenuByType,
 } = require("../controller/menus-controller");
 
-//get all menus http://localhost:4000/menus/all
+// Get all menus http://localhost:4000/menus/all
 router.get("/all", getMenus);
 
-//get specific menu http://localhost:4000/menus/{menu_id}
+// Get specific menu http://localhost:4000/menus/{menu_id}
 router.get("/:menu_id", getMenu);
 
-//get specific menu by type http://localhost:4000/menus/{menu_type}
+// Get specific menu by type http://localhost:4000/menus/type/{menu_type}
 router.get("/type/:menu_type", getMenuByType);
 
-//Export all menu routers from here
+// Export all menu routers from here
 module.exports = router;

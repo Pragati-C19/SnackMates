@@ -1,10 +1,10 @@
-//All request and response for User API wrote here
+// All request and response for User API wrote here
 
-//DB Connection
+// DB Connection
 const jwt = require("jsonwebtoken");
 const db = require("../database/db-connection");
 
-//Code is showing 'MODULE_NOT_FOUND' error and didn't give token bcoz we haven't call .env function
+// Code is showing 'MODULE_NOT_FOUND' error and didn't give token bcoz we haven't call .env function
 require("dotenv").config();
 
 const registerUser = (req, res) => {
@@ -56,7 +56,7 @@ const loginUser = (req, res) => {
           user.password = null;
           console.log("Passwords match, user is authenticated : ", user);
 
-          //JWT Token Code
+          // JWT Token Code
           const jwtToken = jwt.sign(user.user_id, process.env.JWT_SECRET);
           res.status(200).json({
             statusCode: 200,
@@ -77,7 +77,7 @@ const loginUser = (req, res) => {
 
 const logoutUser = (req, res) => {
   // Since JWT tokens are stateless, there's no need to invalidate them server-side.
-  //todo: The client should handle token removal.
+  // TODO: The client should handle token removal.
   res.status(200).json({
     statusCode: 200,
     message: "Logout Successful, token should be removed client-side.",

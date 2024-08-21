@@ -6,28 +6,28 @@ const bodyParser = require("body-parser");
 // Parse JSON bodies
 app.use(bodyParser.json());
 
-//import all user routers here
+// Import all user routers here
 const userRouter = require("./routes/auth");
 
-//import all menu routers here
+// Import all menu routers here
 const menuRouter = require("./routes/menus");
 
-//import all restaurants routers here
+// Import all restaurants routers here
 const restaurantsRouter = require("./routes/restaurants");
 
-//import all favorites routers here
+// Import all favorites routers here
 const favoritesRouter = require("./routes/favorites");
 
-//routers for http://localhost:4000/auth
+// Routers for http://localhost:4000/auth
 app.use("/auth", userRouter);
 
-//routers for http://localhost:4000/menus
+// Routers for http://localhost:4000/menus
 app.use("/menus", menuRouter);
 
-//routers for http://localhost:4000/restaurants
+// Routers for http://localhost:4000/restaurants
 app.use("/restaurants", restaurantsRouter);
 
-//routers for http://localhost:4000/favorites
+// Routers for http://localhost:4000/favorites
 app.use("/favorites", favoritesRouter);
 
 app.listen(port, () => {

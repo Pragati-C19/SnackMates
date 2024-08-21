@@ -1,6 +1,6 @@
 //All request and response for restaurants API wrote here
 
-//DB Connection
+// DB Connection
 const db = require("../database/db-connection");
 
 const getRestaurantMenu = (req, res) => {

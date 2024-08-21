@@ -13,11 +13,10 @@ function authenticateToken(req, res, next) {
 
   // Check if the user is authenticated
   if (emptyValues.includes(token)) {
-    //TODO Change all status code format as this one
-    res.status(200).json({ statusCode: 401, statusMsg: "Unauthorized" });
+    res.status(401).json({ statusCode: 401, statusMsg: "Unauthorized" });
   } else {
-    //if we have a token we need to verify that token
-    //this user_id is used in mysql table
+    // If we have a token we need to verify that token
+    // This user_id is used in mysql table
     jwt.verify(token, process.env.JWT_SECRET, (err, user_id) => {
       if (err) return res.status(403).send("You Don't have access");
       req.user_id = user_id;
