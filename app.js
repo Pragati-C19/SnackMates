@@ -2,6 +2,14 @@ const express = require("express");
 const app = express();
 const port = 4000;
 const bodyParser = require("body-parser");
+const cors = require("cors");
+
+// Enable CORS for all routes
+app.use(cors());
+app.options('*', cors());
+
+// Enable CORS for specific origins
+// app.use(cors({ origin: 'http://127.0.0.1:3000' }));
 
 // Parse JSON bodies
 app.use(bodyParser.json());
