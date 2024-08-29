@@ -26,6 +26,9 @@ const restaurantsRouter = require("./routes/restaurants");
 // Import all favorites routers here
 const favoritesRouter = require("./routes/favorites");
 
+// Import all cart routers here
+const cartRouter = require("./routes/cart");
+
 // Routers for http://localhost:4000/auth
 app.use("/auth", userRouter);
 
@@ -37,6 +40,9 @@ app.use("/restaurants", restaurantsRouter);
 
 // Routers for http://localhost:4000/favorites
 app.use("/favorites", favoritesRouter);
+
+// Routers for http://localhost:4000/cart
+app.use("/cart", cartRouter);
 
 app.listen(port, () => {
   console.log(`Event-Checker app listening on port ${port}`);
