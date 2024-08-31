@@ -31,7 +31,7 @@ const getFavorites = (req, res) => {
     } else {
       if (results.length === 0) {
         res
-          .status(404)
+          .status(201)
           .json({ statusCode: 404, error: "No favorites found for the user" });
       } else {
         res.status(200).json({ statusCode: 200, data: results });
@@ -79,7 +79,7 @@ const deleteFavorite = (req, res) => {
         .status(500)
         .json({ statusCode: 500, error: "Failed to delete favorite" });
     } else if (results.affectedRows === 0) {
-      res.status(404).json({ statusCode: 404, error: "Favorite not found" });
+      res.status(201).json({ statusCode: 404, error: "Favorite not found" });
     } else {
       res
         .status(200)

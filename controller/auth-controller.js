@@ -45,7 +45,7 @@ const loginUser = (req, res) => {
     } else {
       if (results.length === 0) {
         // User with the provided email not found
-        res.status(404).json({ statusCode: 404, error: "User not found" });
+        res.status(201).json({ statusCode: 404, error: "User not found" });
       } else {
         // User found, check password
         const user = results[0];
@@ -67,7 +67,7 @@ const loginUser = (req, res) => {
           });
         } else {
           // Passwords do not match : Authentication failed
-          res.status(401).json({
+          res.status(201).json({
             statusCode: 401,
             error: "Wrong Password, Authentication Failed",
           });

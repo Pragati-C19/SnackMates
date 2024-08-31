@@ -16,7 +16,7 @@ const getMenu = (req, res) => {
       res.status(500).json({ statusCode: 500, error: "Failed to Fetch Menu" });
     } else {
       if (results.length === 0) {
-        res.status(404).json({ statusCode: 404, error: "Menu not found" });
+        res.status(201).json({ statusCode: 404, error: "Menu not found" });
       } else {
         res.status(200).json({ statusCode: 200, data: results[0] });
         console.log("[INFO] Menu details of specific ID: ", results);
@@ -60,7 +60,7 @@ const getMenuByType = (req, res) => {
     } else {
       console.log("[DEBUG] Query results: ", results);
       if (results.length === 0) {
-        res.status(404).json({ statusCode: 404, error: "Menu not found" });
+        res.status(201).json({ statusCode: 404, error: "Menu not found" });
       } else {
         res.status(200).json({ statusCode: 200, data: results });
       }

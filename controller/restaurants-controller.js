@@ -22,7 +22,7 @@ const getRestaurantMenu = (req, res) => {
     } else {
       if (results.length === 0) {
         res
-          .status(404)
+          .status(201)
           .json({
             statusCode: 404,
             error: "Menu not found for the restaurant",

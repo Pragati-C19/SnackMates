@@ -31,7 +31,7 @@ const getCartItems = (req, res) => {
     } else {
       if (results.length === 0) {
         res
-          .status(404)
+          .status(201)
           .json({ statusCode: 404, error: "No cart items found for the user" });
       } else {
         res.status(200).json({ statusCode: 200, data: results });
@@ -69,7 +69,7 @@ const deleteCartItem = (req, res) => {
   // Debudding : Ensure that the cart_id and user_id are correct
   if (!userId || !cartItemId) {
     return res
-      .status(400)
+      .status(201)
       .json({ statusCode: 400, error: "Missing user_id or cart_id" });
   }
 
@@ -84,7 +84,7 @@ const deleteCartItem = (req, res) => {
         .status(500)
         .json({ statusCode: 500, error: "Failed to delete cart item" });
     } else if (results.affectedRows === 0) {
-      res.status(404).json({ statusCode: 404, error: "Cart item not found" });
+      res.status(201).json({ statusCode: 404, error: "Cart item not found" });
     } else {
       res
         .status(200)
@@ -101,7 +101,7 @@ const deleteAllCartItems = (req, res) => {
   // Validate user_id
   if (!userId) {
     return res
-      .status(400)
+      .status(201)
       .json({ statusCode: 400, error: "User ID is required" });
   }
 
