@@ -12,7 +12,7 @@ app.options('*', cors());
 // app.use(cors({ origin: 'http://127.0.0.1:3000' }));
 
 // Parse JSON bodies
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Import all user routers here
 const userRouter = require("./routes/auth");

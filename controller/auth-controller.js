@@ -8,14 +8,15 @@ const db = require("../database/db-connection");
 require("dotenv").config();
 
 const registerUser = (req, res) => {
-  const { userID, emailID, userName, password, created_at } = req.body;
+  const { emailID, userName, password} = req.body;
+  console.log("[INFO] registerUser: EmailID, Username and Password => ", emailID, userName, password);
 
   // Insert user data into the MySQL database
   const registerQuery =
-    "INSERT INTO user_table (user_id, email, user_name, password, created_at) VALUES (?, ?, ?, ?, NOW())";
+    "INSERT INTO user_table ( email, user_name, password, created_at) VALUES ( ?, ?, ?, NOW())";
   db.query(
     registerQuery,
-    [userID, emailID, userName, password, created_at],
+    [ emailID, userName, password],
     (error, results) => {
       if (error) {
         console.error("Error While Registering User in MySQL:", error);
@@ -31,13 +32,13 @@ const registerUser = (req, res) => {
 };
 
 const loginUser = (req, res) => {
-  const { emailID, password } = req.body;
-  console.log("[INFO] loginUser: email_id and Password => ", emailID, password);
+  const { userName, password } = req.body;
+  console.log("[INFO] loginUser: Username and Password => ", userName, password);
 
   // Retrieve user data from the database based on the provided email
-  const loginQuery = "SELECT * FROM user_table WHERE email = ?";
+  const loginQuery = "SELECT * FROM user_table WHERE user_name = ?";
 
-  db.query(loginQuery, [emailID], (error, results) => {
+  db.query(loginQuery, [userName], (error, results) => {
     if (error) {
       console.error("Error While Retrieving User Data:", error);
       res.status(500).json({ statusCode: 500, error: "Internal server error" });
@@ -62,6 +63,7 @@ const loginUser = (req, res) => {
             statusCode: 200,
             message: "Login Successful",
             accessToken: jwtToken,
+            userId: user.user_id
           });
         } else {
           // Passwords do not match : Authentication failed
@@ -77,7 +79,7 @@ const loginUser = (req, res) => {
 
 const logoutUser = (req, res) => {
   // Since JWT tokens are stateless, there's no need to invalidate them server-side.
-  // TODO: The client should handle token removal.
+  // The client is handling token removal.
   res.status(200).json({
     statusCode: 200,
     message: "Logout Successful, token should be removed client-side.",
