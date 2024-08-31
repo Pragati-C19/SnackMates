@@ -6,6 +6,7 @@ const {
   getCartItems,
   addCartItem,
   deleteCartItem,
+  deleteAllCartItems,
 } = require("../controller/cart-controller");
 
 // Get all cart http://localhost:4000/cart/all/{user_id}
@@ -16,6 +17,9 @@ router.post("/:user_id", authenticateToken, addCartItem);
 
 // Remove to cart http://localhost:4000/cart/{user_id}/{cart_id}
 router.delete("/:user_id/:cart_id", authenticateToken, deleteCartItem);
+
+// Remove to All cart http://localhost:4000/cart/{user_id}
+router.delete("/:user_id", authenticateToken, deleteAllCartItems);
 
 // Export all cart routers from here
 module.exports = router;

@@ -94,4 +94,32 @@ const deleteCartItem = (req, res) => {
   });
 };
 
-module.exports = { getCartItems, addCartItem, deleteCartItem };
+const deleteAllCartItems = (req, res) => {
+  const userId = req.params.user_id;
+  console.log("userID", userId)
+
+  // Validate user_id
+  if (!userId) {
+    return res
+      .status(400)
+      .json({ statusCode: 400, error: "User ID is required" });
+  }
+
+  const deleteAllCartItemsQuery = `DELETE FROM cart_table WHERE user_id = ?`;
+
+  db.query(deleteAllCartItemsQuery, [userId], (error, results) => {
+    if (error) {
+      console.error("Error while clearing cart:", error);
+      res
+        .status(500)
+        .json({ statusCode: 500, error: "Failed to clear cart" });
+    } else {
+      res
+        .status(200)
+        .json({ statusCode: 200, message: "Cart cleared successfully" });
+      console.log("[INFO] All cart items deleted: ", results);
+    }
+  });
+};
+
+module.exports = { getCartItems, addCartItem, deleteCartItem, deleteAllCartItems };
